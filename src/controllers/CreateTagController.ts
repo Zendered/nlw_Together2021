@@ -5,7 +5,7 @@ export class CreateTagController {
   async handle(req: Request, res: Response) {
     const { name } = req.body;
     const service = new CreateTagService();
-    const result = await service.execute(name);
-    return res.json(result);
+    const tag = await service.execute(name);
+    return res.json(tag);
   }
 }
